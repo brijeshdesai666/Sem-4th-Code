@@ -6,16 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script type="text/javascript">
-        function redirect() {
-            location.href = "https://www.google.com";
+        function toggle() {
+            let mydiv = document.getElementById("mydiv");
+            if (mydiv.style.display == "none") {
+                mydiv.style.display = "block";
+            } else {
+                mydiv.style.display = "none";
+            }
         }
     </script>
 </head>
 
 <body>
     <form action="">
-        <input type="button" value="Click me!" onclick="redirect();">
+        <input type="button" value="toggle" onclick="toggle();">
     </form>
+
+    <div id="mydiv">
+        Welcomee
+    </div>
+
 </body>
 
 </html>
