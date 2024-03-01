@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function data() {
+            let a = document.getElementById("r1").href;
+            alert(a);
+            let b = document.getElementById("r1").hreflanf;
+            alert(b);
+            let c = document.getElementById("r1");
+            alert(c.target);
+            let d = document.getElementById("r1").rel;
+            alert(d);
+            let e = document.getElementById("r1").type;
+            alert(e);
+
+        }
+    </script>
+</head>
+
+<body>
+    <a href="https://www.google.com" id="r1" hreflang="en-us" target="_self" rel="nofollow" type="text/html">Link
+        Tag</a>
+    <button onclick="data();">Click me</button>
+</body>
+
+</html>

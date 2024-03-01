@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table id="t1" border="1">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+    </table><br>
+    <button onclick="data();">Click me</button>
+</body>
+<script>
+    function data() {
+        let table1 = document.getElementById("t1");
+        let row = table1.insertRow(0);
+        let cell2 = row.insertCell(0);
+        let cell1 = row.insertCell(0);
+        cell1.innerHTML = "new cell1";
+        cell2.innerHTML = "new cell2";
+    }
+</script>
+
+</html>
