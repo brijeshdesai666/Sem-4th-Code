@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9th Pracical</title>
+</head>
+
+<body>
+    <select name="" id="s1">
+        <option value="" id="o1">one</option>
+        <option value="" id="o2">two</option>
+        <option value="" id="o3">three</option>
+    </select>
+    <button onclick="fun_remove();">remove</button>
+</body>
+<script>
+    function fun_remove() {
+        let x = document.getElementById("s1");
+        x.remove(x.selectedIndex);
+    }
+</script>
+
+</html>
