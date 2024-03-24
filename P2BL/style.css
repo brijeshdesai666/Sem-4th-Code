@@ -1,0 +1,13 @@
+.selector-for-some-widget {
+    box-sizing: content-box;
+}
+
+.img-resize {
+    width: 20px;
+
+}
+
+.g-4 {
+    background-color: yellow;
+    width: 90vw;
+}
