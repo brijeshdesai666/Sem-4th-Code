@@ -266,6 +266,10 @@
 
 
 /* product cards */
+.cardA:hover {
+    cursor: pointer;
+}
+
 #product-cards {
     margin-top: 100px;
 }
@@ -289,7 +293,7 @@
 
 .star i {
     margin-left: 5px;
-    font-size: 13px;
+    font-size: 18px;
 }
 
 .checked {
@@ -1014,8 +1018,9 @@ html {
     margin: 20vh auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
-    max-width: 600px;
+    width: fit-content;
+    max-width: fit-content;
+    min-width: 800px;
     position: relative;
     /* Ensure relative positioning for absolute children */
 }
@@ -1073,9 +1078,33 @@ html {
     background-color: #e0a800;
 }
 
-/* Color selector styles */
+.additional-images {
+    display: flex;
+    justify-content: space-between;
+    /* Space between the main image and additional images */
+    align-items: center;
+    /* Center vertically */
+    margin-top: 10px;
+    /* Adjust as needed */
+}
+
+.additional-images img {
+    height: 200px;
+    /* Adjust as needed */
+    width: auto;
+}
+
+/* Style for color selector */
+#color {
+    cursor: pointer;
+}
+
 .color-selector {
-    margin-bottom: 20px;
+    position: absolute;
+    top: 36vh;
+    right: 60px;
+    margin-top: 20px;
+    /* Adjust margin as needed */
 }
 
 .color-selector label {
@@ -1088,4 +1117,18 @@ html {
     padding: 8px;
     border-radius: 5px;
     border: 1px solid #ccc;
+    background-color: blue;
+    /* Set initial background color */
+}
+
+.rating {
+    font-size: 14px;
+    /* Adjust font size as needed */
+    margin-right: 5px;
+    /* Add some spacing between rating count and stars */
+}
+
+.js-star {
+    float: inline-end;
+    margin-top: 20px;
 }

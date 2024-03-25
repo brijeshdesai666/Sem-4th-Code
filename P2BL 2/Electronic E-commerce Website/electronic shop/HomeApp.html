@@ -89,7 +89,7 @@
         <h1 class="text-center">Home appliances</h1>
         <div class="row" style="margin-top: 30px;">
             <div class="col-md-3 py-3 py-md-0">
-                <div class="card">
+                <div class="card cardA" onclick="showProductPreview(this, 5)">
                     <img src="./images/p6.png" alt="">
                     <div class="card-body">
                         <h3 class="text-center">Iphone 13 pro</h3>
@@ -108,7 +108,7 @@
                 </div>
             </div>
             <div class="col-md-3 py-3 py-md-0">
-                <div class="card">
+                <div class="card cardA" onclick="showProductPreview(this, 5)">
                     <img src="./images/a1.png" alt="">
                     <div class="card-body">
                         <h3 class="text-center">Airpods</h3>
@@ -127,7 +127,7 @@
                 </div>
             </div>
             <div class="col-md-3 py-3 py-md-0">
-                <div class="card">
+                <div class="card cardA" onclick="showProductPreview(this, 5)">
                     <img src="./images/laptop2.png" alt="">
                     <div class="card-body">
                         <h3 class="text-center">Laptop</h3>
@@ -146,7 +146,7 @@
                 </div>
             </div>
             <div class="col-md-3 py-3 py-md-0">
-                <div class="card">
+                <div class="card cardA" onclick="showProductPreview(this, 5)">
                     <img src="./images/t1.png" alt="">
                     <div class="card-body">
                         <h3 class="text-center">Ipad</h3>
@@ -168,7 +168,7 @@
 
         <div class="row" style="margin-top: 30px;">
             <div class="col-md-3 py-3 py-md-0">
-                <div class="card">
+                <div class="card cardA" onclick="showProductPreview(this, 5)">
                     <img src="./images/w1.png" alt="">
                     <div class="card-body">
                         <h3 class="text-center">Smart Watch</h3>
@@ -187,7 +187,7 @@
                 </div>
             </div>
             <div class="col-md-3 py-3 py-md-0">
-                <div class="card">
+                <div class="card cardA" onclick="showProductPreview(this, 5)">
                     <img src="./images/pcm1.png" alt="">
                     <div class="card-body">
                         <h3 class="text-center">PC Moniter</h3>
@@ -206,7 +206,7 @@
                 </div>
             </div>
             <div class="col-md-3 py-3 py-md-0">
-                <div class="card">
+                <div class="card cardA" onclick="showProductPreview(this, 5)">
                     <img src="./images/phone1.png" alt="">
                     <div class="card-body">
                         <h3 class="text-center">iPhone x</h3>
@@ -225,7 +225,7 @@
                 </div>
             </div>
             <div class="col-md-3 py-3 py-md-0">
-                <div class="card">
+                <div class="card cardA" onclick="showProductPreview(this, 5)">
                     <img src="./images/h1.png" alt="">
                     <div class="card-body">
                         <h3 class="text-center">Headphone</h3>
@@ -247,6 +247,18 @@
     </div>
 
 
+
+    <div>
+        <div id="productPreview" class="modal" onclick="closeProductPreview(event)">
+            <div class="modal-content">
+                <!-- Close button inside modal content -->
+                <!-- <span class="close">&times;</span> -->
+
+                <!-- Other product preview content goes here -->
+
+            </div>
+        </div>
+    </div>
 
 
 
