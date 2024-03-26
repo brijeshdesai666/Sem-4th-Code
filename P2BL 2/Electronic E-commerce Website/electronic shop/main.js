@@ -176,12 +176,12 @@ function closeProductPreview(event) {
 
 function buyNow() {
     // Logic for Buy Now button
-    alert("Buy Now button clicked!");
+    alert("Product purchased");
 }
 
 function addToCart() {
     // Logic for Add to Cart button
-    alert("Add to Cart button clicked!");
+    alert("Product is Sucessfully add to Cart");
 }
 
 function changeSelectorBackgroundColor(color) {
@@ -190,5 +190,50 @@ function changeSelectorBackgroundColor(color) {
 }
 
 
+function validateForm() {
+    console.log("ksabfksa")
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var phone = document.getElementById("phone").value;
+    var message = document.getElementById("message").value;
 
+
+
+    var nameRegex = /^[a-zA-Z ]+$/;
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var phoneRegex = /^[0-9]{10}$/;
+
+    var isValid = true;
+
+    if (!name.match(nameRegex)) {
+        alert("Please enter a valid name (only characters allowed).");
+        document.getElementById("name").focus(); // Set focus on the name field
+        isValid = false;
+    }
+
+    if (!email.match(emailRegex)) {
+        alert("Please enter a valid email address.");
+        document.getElementById("email").focus(); // Set focus on the email field
+        isValid = false;
+    }
+
+    if (!phone.match(phoneRegex)) {
+        alert("Please enter a valid 10-digit phone number.");
+        document.getElementById("phone").focus(); // Set focus on the phone field
+        isValid = false;
+    }
+
+    if (!isValid) {
+        return; // If any validation fails, exit the function without clearing other fields
+    }
+    if (isValid) {
+        // Clear input fields if all validations pass
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("phone").value = "";
+        document.getElementById("message").value = "";
+    }
+    // Additional validation or form submission code can be added here
+    // For example, submitting the form data via AJAX
+}
 

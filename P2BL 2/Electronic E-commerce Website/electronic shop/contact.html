@@ -114,21 +114,23 @@
         </div>
       </div>
     </div>
+
     <div class="row" style="margin-top: 30px;">
       <div class="col-md-4 py-3 py-md-0">
-        <input type="text" class="form-control form-control" placeholder="Name">
+        <input type="text" class="form-control form-control" id="name" placeholder="Name">
       </div>
       <div class="col-md-4 py-3 py-md-0">
-        <input type="text" class="form-control form-control" placeholder="Email">
+        <input type="email" class="form-control form-control" id="email" placeholder="Email">
       </div>
       <div class="col-md-4 py-3 py-md-0">
-        <input type="text" class="form-control form-control" placeholder="Phone">
+        <input type="tel" class="form-control form-control" id="phone" placeholder="Phone">
       </div>
       <div class="form-group" style="margin-top: 30px;">
-        <textarea class="form-control" id="" rows="5" placeholder="Message"></textarea>
+        <textarea class="form-control" id="message" rows="5" placeholder="Message"></textarea>
       </div>
-      <div class="messagebtn text-center"><button>Message</button></div>
+      <div class="messagebtn text-center"><button onclick="validateForm()">Message</button></div>
     </div>
+
   </div>
 
 
