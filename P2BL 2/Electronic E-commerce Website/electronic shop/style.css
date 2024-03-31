@@ -1025,19 +1025,23 @@ html {
     /* Ensure relative positioning for absolute children */
 }
 
-/* .close {
+.close {
     color: #aaa;
     position: absolute;
-    top: 10px;
-    right: 20px;
+    top: 0px;
+    right: 10px;
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
-} */
-
+    transition: transform 0.3s ease;
+    /* Add transition for smooth rotation */
+}
 
 .close:hover {
     color: #aaa;
+    transform: rotate(90deg);
+    font-size: 30px;
+    /* Rotate the close button on hover */
 }
 
 /* Button styles */
@@ -1081,10 +1085,12 @@ html {
 .additional-images {
     display: flex;
     justify-content: space-between;
+    gap: 20px;
     /* Space between the main image and additional images */
     align-items: center;
     /* Center vertically */
     margin-top: 10px;
+    margin-bottom: 25px;
     /* Adjust as needed */
 }
 
@@ -1131,4 +1137,19 @@ html {
 .js-star {
     float: inline-end;
     margin-top: 20px;
+}
+
+/* .fa-solid.fa-star-half-alt::before {
+    content: "\f089";
+    /* Unicode character for half-filled star 
+}*/
+
+.no-review {
+    font-size: 16px;
+    color: #888 !important;
+    /* Adjust color as needed */
+    margin-top: 10px;
+    /* Adjust spacing from the stars */
+    font-style: italic;
+    /* Optionally make it italic */
 }

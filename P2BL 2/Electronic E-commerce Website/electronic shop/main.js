@@ -96,9 +96,10 @@ function showProductPreview(card, rating) {
     // Create the HTML for the preview content
     var previewContent = `
       <div class="preview-content">
+      <span class="close">&times;</span>
       <div class="additional-images">
         <img src="${productImageSrc}" alt="" >
-          ${additionalImages.map(imageUrl => `<img src="${imageUrl}" alt="" >`).join('')}
+          ${additionalImages.map(imageUrl => `<img src="${imageUrl}" alt="">`).join('')}
         </div>
         <h3>${productName}</h3>
         <p>${productDescription}</p>
@@ -135,11 +136,32 @@ function showProductPreview(card, rating) {
 
     function getStarIcons(rating) {
         var starIcons = '';
-        for (var i = 0; i < rating; i++) {
+        var fullStars = Math.floor(rating); // Number of full stars
+        var hasHalfStar = rating % 1 !== 0; // Check if there's a half star
+
+        // Add full stars
+        for (var i = 0; i < fullStars; i++) {
             starIcons += '<i class="fa-solid fa-star checked"></i>';
         }
+
+        // Add half star if present
+        if (hasHalfStar) {
+            starIcons += '<i class="fa-solid fa-star-half-alt checked"></i>';
+        } else if (fullStars < 5) { // Add empty stars if not already at maximum
+            // Add empty stars to make up 5 stars
+            var emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0); // Subtract 1 if there's a half star
+            for (var j = 0; j < emptyStars; j++) {
+                starIcons += '<i class="fa-solid fa-star"></i>';
+            }
+        }
+
         return `${starIcons} <span class="rating"> (${rating} star)</span> `;
     }
+
+
+
+
+
 
     var modal = document.getElementById('productPreview');
     var html = document.documentElement;
@@ -159,20 +181,20 @@ function showProductPreview(card, rating) {
 
 
 
-function closeProductPreview(event) {
-    if (event.target === event.currentTarget) {
-        var modal = document.getElementById('productPreview');
-        var html = document.documentElement;
-        var body = document.body;
+// Function to close the product preview modal
+function closeProductPreview() {
+    var modal = document.getElementById('productPreview');
+    var html = document.documentElement;
+    var body = document.body;
 
-        modal.style.display = 'none';
-        body.classList.remove('modal-open');
+    modal.style.display = 'none';
+    body.classList.remove('modal-open');
 
-        // Enable scrolling on the body and html elements
-        html.style.overflow = '';
-        body.style.overflow = '';
-    }
+    // Enable scrolling on the body and html elements
+    html.style.overflow = '';
+    body.style.overflow = '';
 }
+
 
 function buyNow() {
     // Logic for Buy Now button
