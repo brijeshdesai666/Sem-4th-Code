@@ -108,15 +108,7 @@ function showProductPreview(card, rating) {
         </div>
         <h2>${productPrice}</h2>
         
-        <div class="color-selector">
-         <label for="color">Select Color:</label>
-         <select id="color" onchange="changeSelectorBackgroundColor(this.value)">
-                <option value="blue">Blue</option>
-                <option value="red">Red</option>
-                <option value="green">Green</option>
-                <!-- Add more color options if needed -->
-            </select>
-        </div>
+      
 
         <!-- Add other product details here -->
 
@@ -198,18 +190,48 @@ function closeProductPreview() {
 
 function buyNow() {
     // Logic for Buy Now button
-    alert("Product purchased");
+    window.open('pur.html', '_blank');
+}
+function submitform(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    // Perform form validation
+    var form = document.getElementById('checkout-form');
+    if (!form.checkValidity()) {
+        // If form validation fails, display error messages or take appropriate actions
+        alert('Please fill in all required fields.');
+        return;
+    }
+
+    // If form validation succeeds, call submitform() function
+    // Here you can call the submitform() function or perform any other action
+    submitform();
 }
 
-function addToCart() {
+document.addEventListener('DOMContentLoaded', function () {
+    var form = document.getElementById('checkout-form');
+    form.addEventListener('submit', submitform);
+});
+
+function submitform() {
+    // Your submitform() function logic goes here
+    alert('Product Purchased successfully through case on delivery');
+    window.close();
+}
+
+
+
+
+function addToCart(event) {
     // Logic for Add to Cart button
     alert("Product is Sucessfully add to Cart");
+    event.stopPropagation();
 }
 
-function changeSelectorBackgroundColor(color) {
-    var selectElement = document.getElementById('color');
-    selectElement.style.backgroundColor = color;
-}
+// function changeSelectorBackgroundColor(color) {
+//     var selectElement = document.getElementById('color');
+//     selectElement.style.backgroundColor = color;
+// }
 
 
 function validateForm() {
