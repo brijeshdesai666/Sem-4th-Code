@@ -1306,3 +1306,7 @@ body {
     display: block;
     margin: 0 auto;
 }
+
+.form-control-no-padding {
+    padding: .375rem .75rem !important;
+}
