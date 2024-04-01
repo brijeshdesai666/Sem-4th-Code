@@ -68,6 +68,36 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+// Get all images with the class "popup-image"
+var popupImages = document.querySelectorAll('.popup-image');
+
+// Add click event listener to each image
+popupImages.forEach(function (image) {
+    image.addEventListener('click', function () {
+        // Create a modal or lightbox element
+        var modal = document.createElement('div');
+        modal.classList.add('modal');
+
+        // Create an image element inside the modal
+        var modalImage = document.createElement('img');
+        modalImage.src = this.src; // Set the source of the clicked image
+        modalImage.classList.add('modal-image');
+
+        // Append the image to the modal
+        modal.appendChild(modalImage);
+
+        // Append the modal to the document body
+        document.body.appendChild(modal);
+
+        // Add a click event listener to the modal to close it when clicked
+        modal.addEventListener('click', function () {
+            // Remove the modal when clicked
+            modal.remove();
+        });
+    });
+});
+
+
 
 
 
@@ -126,6 +156,27 @@ function showProductPreview(card, rating) {
     modalContent.innerHTML = previewContent;
     productPreview.style.display = 'block';
 
+
+
+
+
+    var modalBackground = document.getElementById('productPreview');
+    modalBackground.addEventListener('click', function () {
+        closeProductPreview(); // Call the function to close the modal
+    });
+
+    // Add event listener to the modal content to prevent closing on click inside
+    var modalContent = document.querySelector('.preview-content');
+    modalContent.addEventListener('click', function (event) {
+        // Check if the clicked element is not the close button
+        if (!event.target.classList.contains('close')) {
+            event.stopPropagation(); // Prevent click event from propagating to the modal background
+        }
+    });
+
+
+
+
     function getStarIcons(rating) {
         var starIcons = '';
         var fullStars = Math.floor(rating); // Number of full stars
@@ -155,6 +206,8 @@ function showProductPreview(card, rating) {
 
 
 
+
+
     var modal = document.getElementById('productPreview');
     var html = document.documentElement;
     var body = document.body;
@@ -170,7 +223,6 @@ function showProductPreview(card, rating) {
 
 
 }
-
 
 
 // Function to close the product preview modal
@@ -280,4 +332,3 @@ function validateForm() {
     // Additional validation or form submission code can be added here
     // For example, submitting the form data via AJAX
 }
-
