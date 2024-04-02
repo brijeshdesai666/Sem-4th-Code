@@ -3,95 +3,38 @@ document.addEventListener('DOMContentLoaded', function () {
 
     window.addEventListener('scroll', function () {
         if (window.scrollY > 0) {
-            scrollArrow.classList.add('visible'); // Show the arrow when scrolled down
+            scrollArrow.classList.add('visible');
         } else {
-            scrollArrow.classList.remove('visible'); // Hide the arrow when at the top
+            scrollArrow.classList.remove('visible');
         }
     });
 });
 
-// function showProductPreview() {
-//     var modal = document.getElementById("productPreview");
-//     modal.style.display = "block";
-// }
-
-// function closeProductPreview() {
-//     var modal = document.getElementById("productPreview");
-//     modal.style.display = "none";
-// }
-
-// function showProductPreview(card) {
-//     // Get product details from the clicked card
-//     var productName = card.querySelector('h3').textContent;
-//     var productImageSrc = card.querySelector('img').src;
-//     var productDescription = card.querySelector('p').textContent;
-//     var productPrice = card.querySelector('h2').textContent;
-
-//     // Create the HTML for the preview content
-//     var previewContent = `
-//       <div class="preview-content">
-//         <img src="${productImageSrc}" alt="" height="200px">
-//         <h3>${productName}</h3>
-//         <p>${productDescription}</p>
-//         <h2>${productPrice}</h2>
-
-//         <!-- Add other product details here -->
-
-//       <div class="text-center">
-//           <button class="button buy-now" onclick="buyNow()">Buy Now</button>
-//          <button class="button add-to-cart" onclick="addToCart()">Add to Cart</button>
-//       </div>
-
-//       </div>
-//     `;
-
-//     // Display the preview content in the modal
-//     var productPreview = document.getElementById('productPreview');
-//     var modalContent = productPreview.querySelector('.modal-content');
-//     modalContent.innerHTML = previewContent;
-//     productPreview.style.display = 'block';
-
-//     var modal = document.getElementById('productPreview');
-//     var html = document.documentElement;
-//     var body = document.body;
-
-//     modal.style.display = 'block';
-//     body.classList.add('modal-open');
-
-//     // Disable scrolling on the body and html elements
-//     html.style.overflow = 'hidden';
-//     body.style.overflow = 'hidden';
-
-//     modal.style.overflow = 'hidden';
-// }
 
 
-
-
-// Get all images with the class "popup-image"
 var popupImages = document.querySelectorAll('.popup-image');
 
-// Add click event listener to each image
+
 popupImages.forEach(function (image) {
     image.addEventListener('click', function () {
-        // Create a modal or lightbox element
+
         var modal = document.createElement('div');
         modal.classList.add('modal');
 
-        // Create an image element inside the modal
+
         var modalImage = document.createElement('img');
-        modalImage.src = this.src; // Set the source of the clicked image
+        modalImage.src = this.src;
         modalImage.classList.add('modal-image');
 
-        // Append the image to the modal
+
         modal.appendChild(modalImage);
 
-        // Append the modal to the document body
+
         document.body.appendChild(modal);
 
-        // Add a click event listener to the modal to close it when clicked
+
         modal.addEventListener('click', function () {
-            // Remove the modal when clicked
+
             modal.remove();
         });
     });
