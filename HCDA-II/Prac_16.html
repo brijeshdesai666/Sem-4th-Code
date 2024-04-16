@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <meta charset="utf-8">
+    <title>Set a timer to delay execution of subsequent items in the queue</title>
+</head>
+
+<body>
+    <p>delay() method sets different speed values.</p>
+    <button>Click to fade in boxes with a delay</button></p>
+    <div id="div1" style="width:100px;height:90px;display:none;background-color:#9F81F7 ;"></div><br>
+    <div id="div2" style="width:100px;height:90px;display:none;background-color:#0B610B;"></div><br>
+    <div id="div3" style="width:100px;height:90px;display:none;background-color:#61210B;"></div><br>
+    </div>
+</body>
+<script>
+    $("button").click(function () {
+        $("#div1").delay(800).fadeIn();
+        $("#div2").delay(2400).fadeIn();
+        $("#div3").delay(4000).fadeIn();
+    }); 
+</script>
+
+</html>
